@@ -1,5 +1,7 @@
 # Associative-Seminar
 
+This project is developed for an association that wishes to put online its registrations for their summer seminar.
+
 ## Project Structure
 
 The full folder structure of this app is explained below:
