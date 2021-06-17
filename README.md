@@ -4,7 +4,6 @@
 
 The full folder structure of this app is explained below:
 
-> **Note!** Make sure you have already built the app with maven
 
 | Name                               | Description                                                                                                |
 | ---------------------------------- | ---------------------------------------------------------------------------------------------------------- |
