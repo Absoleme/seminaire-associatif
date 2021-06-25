@@ -18,7 +18,7 @@ if(isset($_POST['formconnexion'], $_POST['mail'], $_POST['mdp']) and !empty($_PO
             $_SESSION['id_user'] = $userinfo['id_user'];
             $_SESSION['prenom'] = $userinfo['prenom'];
             $_SESSION['mail'] = $userinfo['mail'];
-            header("Location:./index.php?id=".$_SESSION['id_user']);
+            header("Location:./index.php");
 
         }else
         {
@@ -35,7 +35,7 @@ if(isset($_POST['formconnexion'], $_POST['mail'], $_POST['mdp']) and !empty($_PO
             $_SESSION['id_adherent'] = $userinfo['id_adherent'];
             $_SESSION['prenom'] = $userinfo['prenom'];
             $_SESSION['mail'] = $userinfo['mail'];
-            header("Location:../index.php?id_adherent=".$_SESSION['id_adherent']);
+            header("Location:../index.php");
         }
 
 

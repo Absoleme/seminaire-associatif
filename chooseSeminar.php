@@ -1,5 +1,5 @@
 <?php
 include ('./config/conn.php');
-include ('./php/chooseSeminar.php');
-include ('./view/chooseSeminar.view.php');
+include('./php/myBasket.php');
+include('./view/myBasket.view.php');
 ?>

@@ -10,15 +10,32 @@
     <nav class="navbar">
         <a href="#home">Accueil</a>
         <a href="#Séminaire">Séminaires</a>
-        <a href="#about">Informations</a>
         <?php
-        if(!empty($_SESSION['id_adherent']) || !empty($_SESSION['id_user'])){
+
+        if(!empty($_SESSION['id_adherent'])){
+            $reqadherent = $bdd -> prepare("SELECT * FROM panier WHERE id_adherent = ?");
+            $reqadherent -> execute(array($_SESSION['id_adherent']));
+            $count = $reqadherent -> rowCount();
             ?>
+
             <a href="#">Mes Séminaires</a>
-            <a>Salam Aleykoum <?php echo $_SESSION['prenom']; ?> </a>
-            <?php
-        }
+            <a href="./myBasket.php">Mon panier(<?= $count?>)</a>
+            <a>Salam <?php echo $_SESSION['prenom']; ?> </a>
+        <?php
+        }?>
+
+        <?php
+        if(!empty($_SESSION['id_user'])){
+            $reqadherent = $bdd -> prepare("SELECT * FROM panier WHERE id_user = ?");
+            $reqadherent -> execute(array($_SESSION['id_user']));
+            $count = $reqadherent -> rowCount();
         ?>
+            <a href="#">Mes Séminaires</a>
+            <a href="./myBasket.php">Mon panier (<?= $count?>)</a>
+            <a>Salam <?php echo $_SESSION['prenom']; ?> </a>
+        <?php
+        }?>
+
     </nav>
 
 </header>

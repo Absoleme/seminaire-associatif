@@ -36,47 +36,6 @@ include "./include/nav.php";
 
 <!-- home section ends -->
 
-<!-- features section starts  -->
-
-<section class="Séminaire" id="Séminaire">
-
-    <h1 class="heading"> Séminaire </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="./images/f-icon1.png" alt="">
-            <h3>Week-End 1</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
-            <a href="./view/payment.view.php" class="btn">Inscription</a>
-        </div>
-
-        <div class="box">
-            <img src="./images/f-icon2.png" alt="">
-            <h3>Week-End 2</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
-            <a href="./view/payment.view.php" class="btn">Inscription</a>
-        </div>
-
-        <div class="box">
-            <img src="./images/f-icon3.png" alt="">
-            <h3>Week-End 3</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
-            <a href="./view/payment.view.php" class="btn">Inscription</a>
-        </div>
-        <div class="box">
-            <img src="./images/f-icon1.png" alt="">
-            <h3>Week-End 4</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
-            <a href="./view/payment.view.php" class="btn">Inscription</a>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- features section ends -->
-
 <!-- about section starts  -->
 
 <section class="about" id="about">
@@ -93,10 +52,6 @@ include "./include/nav.php";
             <h3>Titre</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla placeat deserunt saepe repudiandae veniam soluta minima dolor hic aperiam iure.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, quaerat. Dolorem ratione saepe magni quo inventore porro ab voluptates eos, nam eius provident accusantium, quia similique est, repellendus et reiciendis.</p>
-         <!--   <div class="buttons">
-                <a href="#" class="btn"> <i class="fab fa-apple"></i> app store </a>
-                <a href="#" class="btn"> <i class="fab fa-google-play"></i> google-play </a>
-            </div> -->
         </div>
 
     </div>
@@ -104,6 +59,48 @@ include "./include/nav.php";
 </section>
 
 <!-- about section ends -->
+<!-- features section starts  -->
+
+<section class="Séminaire" id="Séminaire">
+
+    <h1 class="heading"> Séminaire </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="./images/f-icon1.png" alt="">
+            <h3>Week-End 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
+            <a href="./php/addSeminartoBasket.php?id_we=1" class="btn">Ajouter au panier</a>
+        </div>
+
+        <div class="box">
+            <img src="./images/f-icon2.png" alt="">
+            <h3>Week-End 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
+            <a href="./php/addSeminartoBasket.php?id_we=2" class="btn">Ajouter au panier</a>
+        </div>
+
+        <div class="box">
+            <img src="./images/f-icon3.png" alt="">
+            <h3>Week-End 3</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
+            <a href="./php/addSeminartoBasket.php?id_we=3" class="btn">Ajouter au panier</a>
+        </div>
+        <div class="box">
+            <img src="./images/f-icon1.png" alt="">
+            <h3>Week-End 4</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus recusandae autem, repellendus fugit quaerat provident voluptatum non officiis ratione.</p>
+            <a href="./php/addSeminartoBasket.php?id_we=4" class="btn">Ajouter au panier</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- features section ends -->
+
+
 
 <!-- footer section starts  -->
 

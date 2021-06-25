@@ -92,6 +92,11 @@ header .navbar a{
     color:var(--purple);
 }
 
+header .navbar i{
+    font-size: 1.7rem;
+    margin-left: 2rem;
+}
+
 header .navbar a:hover{
     color:var(--pink);
 }
