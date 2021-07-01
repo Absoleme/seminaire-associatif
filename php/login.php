@@ -8,34 +8,48 @@ if(isset($_POST['formconnexion'], $_POST['mail'], $_POST['mdp']) and !empty($_PO
         $mail = htmlspecialchars($_POST['mail']);
         $mdp = sha1($_POST['mdp']);
 
-        $requser = $bdd -> prepare("SELECT * FROM user WHERE mail = ? and password = ?");
-        $requser->execute(array($mail,$mdp));
-        $userexist = $requser->rowCount();
+        if(isset($_POST['yes']) and !empty($_POST['yes'])){
+            $reqadherent = $bdd -> prepare("SELECT * FROM adherent WHERE mail = ? and mdp = ?");
+            $reqadherent -> execute(array($mail, $mdp));
+            $adherentExist = $reqadherent -> rowCount();
 
-        if($userexist == 1){
-            session_start();
-            $userinfo = $requser -> fetch();
-            $_SESSION['id_user'] = $userinfo['id_user'];
-            $_SESSION['prenom'] = $userinfo['prenom'];
-            $_SESSION['mail'] = $userinfo['mail'];
-            header("Location:./index.php");
+            if($adherentExist == 1){
+                session_start();
+                $userinfo = $reqadherent -> fetch();
+                $_SESSION['id_adherent'] = $userinfo['id_adherent'];
+                $_SESSION['prenom'] = $userinfo['prenom'];
+                $_SESSION['mail'] = $userinfo['mail'];
+                $_SESSION['nom'] = $userinfo['nom'];
+                $_SESSION['telephone'] = $userinfo['telephone'];
+                $_SESSION['mdp'] = $userinfo['mdp'];
 
-        }else
-        {
-            echo "Mauvais mail ou mot de passe";
-        }
+                header("Location:../index.php");
+            }else
+            {
+                $msg = "Mauvais mail ou mot de passe";
+                header("Location:../login.php?erreur=$msg");
+            }
+        }else{
+            $requserC = $bdd -> prepare("SELECT * FROM customer WHERE mail = ? and password = ?");
+            $requserC -> execute(array($mail,$mdp));
+            $userexist = $requserC -> rowCount();
 
-        $reqadherent = $bdd -> prepare("SELECT * FROM adherent WHERE mail = ? and mdp = ?");
-        $reqadherent -> execute(array($mail, $mdp));
-        $adherentExist = $reqadherent -> rowCount();
+            if($userexist == 1){
+                session_start();
+                $userinfo = $requserC -> fetch();
+                $_SESSION['id_user'] = $userinfo['id_user'];
+                $_SESSION['prenom'] = $userinfo['prenom'];
+                $_SESSION['mail'] = $userinfo['mail'];
+                $_SESSION['nom'] = $userinfo['nom'];
+                $_SESSION['telephone'] = $userinfo['telephone'];
+                $_SESSION['mdp'] = $userinfo['password'];
+                header("Location:../index.php");
 
-        if($adherentExist == 1){
-            session_start();
-            $userinfo = $reqadherent -> fetch();
-            $_SESSION['id_adherent'] = $userinfo['id_adherent'];
-            $_SESSION['prenom'] = $userinfo['prenom'];
-            $_SESSION['mail'] = $userinfo['mail'];
-            header("Location:../index.php");
+            }else
+            {
+                $msg = "Mauvais mail ou mot de passe";
+                header("Location:../login.php?erreur=$msg");
+            }
         }
 
 

@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seminaire ACMC</title>
+    <title>Seminaire AMC</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -20,10 +20,10 @@
         <img src="./images/amc.png" alt="">
     </div>
 
-    <form action="./php/passwordRecovery.php" method="post">
+    <form action="./php/pass.php" method="post">
 
         <h1 class="heading">Modifier votre mot de passe</h1>
-
+        <p><?= $_GET['erreur'] ?></p>
         <div class="inputBox">
             <input type="email" name="mail" required>
             <label>Mail</label>

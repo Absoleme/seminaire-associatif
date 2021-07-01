@@ -1,6 +1,6 @@
 <?php
-include ("./config/conn.php");
 session_start();
-include ("./php/myBasket.php");
+include ("./config/conn.php");
+//include ("./php/myBasket.php");
 include ("./view/myBasket.view.php");
-?>
+

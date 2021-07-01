@@ -2,14 +2,14 @@
 
 <header>
 
-    <a href="#" class="logo"><span>ACMC</span> Mosquée Choisy le roi</a>
+    <a href="./" class="logo"><span>ACMC</span> Mosquée Choisy le roi</a>
 
     <input type="checkbox" id="menu-bar">
     <label for="menu-bar" class="fas fa-bars"></label>
 
     <nav class="navbar">
-        <a href="#home">Accueil</a>
-        <a href="#Séminaire">Séminaires</a>
+        <a href="./index.php">Accueil</a>
+        <a href="./index.php#Séminaire">Séminaires</a>
         <?php
 
         if(!empty($_SESSION['id_adherent'])){
@@ -18,9 +18,10 @@
             $count = $reqadherent -> rowCount();
             ?>
 
-            <a href="#">Mes Séminaires</a>
+            <a href="./mySeminar.php">Mes Séminaires</a>
             <a href="./myBasket.php">Mon panier(<?= $count?>)</a>
-            <a>Salam <?php echo $_SESSION['prenom']; ?> </a>
+            <a href="./profil.php"><?php echo $_SESSION['prenom']; ?> </a>
+            <a href="./php/logout.php">Déconnexion</a>
         <?php
         }?>
 
@@ -30,9 +31,10 @@
             $reqadherent -> execute(array($_SESSION['id_user']));
             $count = $reqadherent -> rowCount();
         ?>
-            <a href="#">Mes Séminaires</a>
+            <a href="./mySeminar.php">Mes Séminaires</a>
             <a href="./myBasket.php">Mon panier (<?= $count?>)</a>
-            <a>Salam <?php echo $_SESSION['prenom']; ?> </a>
+            <a href="./profil.php"><?php echo $_SESSION['prenom']; ?> </a>
+            <a href="./php/logout.php">Déconnexion</a>
         <?php
         }?>
 

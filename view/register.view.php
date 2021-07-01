@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>complete responsive app landing page website design tutorial</title>
+    <title>Seminaire AMC</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -23,7 +23,7 @@
     <form action="./php/register.php" method="post">
 
         <h1 class="heading">Inscription</h1>
-
+        <p><?= $_GET['erreur'] ?></p>
         <div class="inputBox">
             <input type="text" name="nom" required>
             <label>Nom</label>

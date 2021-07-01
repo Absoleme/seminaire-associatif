@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Séminaire Mosquée de Choisy le roi</title>
+    <title>Seminaire AMC</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -23,16 +23,68 @@ include "./include/nav.php";
 
     <div class="box-container">
     <?php
-        while($reqFetch = $reqWE -> fetch()){
-            ?>
-            <div class="box">
-                <img src="./images/f-icon1.png" alt="">
-                <h3><?php $reqFetch['name']?></h3>
-                <p> Du <?php $reqFetch['date_debut'] ?> au <?php $reqFetch['date_fin'] ?></p>
-            </div>
+    if(isset($_SESSION['id_adherent']) and !empty($_SESSION['id_adherent'])){
+
+        $countA = $reqAdherentSeminar -> rowCount();
+
+        if($countA != 0){
+            while($reqFetchA = $reqAdherentSeminar -> fetch()){
+                $reqWE = $bdd -> prepare("SELECT * FROM weekend WHERE id_we = ?");
+                $reqWE -> execute(array($reqFetchA['id_we']));
+                $ra = $reqWE -> fetch();
+                ?>
+                <div class="box">
+                    <h3><?= $ra['name']?></h3>
+                    <p> Du <?= $ra['date_debut'] ?> au <?= $ra['date_fin'] ?></p>
+                    <p>A présenter le jour du séminaire.</p>
+                </div>
+                <?php
+            }
+        }else{
+    ?>
+        <div class="box">
+
+            <h3>Vous ne vous êtes inscrit à aucun séminaire.</h3>
+
+        </div>
         <?php
         }
-    ?>
+
+
+        }?>
+
+
+        <?php
+        if(isset($_SESSION['id_user']) and !empty($_SESSION['id_user'])){
+
+            $countU = $reqUserSeminar -> rowCount();
+            if($countU != 0){
+
+                while($reqFetchU = $reqUserSeminar -> fetch()){
+                    $reqWEU = $bdd -> prepare("SELECT * FROM weekend WHERE id_we = ?");
+                    $reqWEU -> execute(array($reqFetchU['id_we']));
+                    $ru = $reqWEU -> fetch();
+                    ?>
+                    <div class="box">
+                        <h3><?= $ru['name']?></h3>
+                        <p> Du <?= $ru['date_debut'] ?> au <?= $ru['date_fin'] ?></p>
+                        <p>A présenter le jour du séminaire.</p>
+
+                    </div>
+                    <?php
+                }
+            }else{
+                ?>
+                <div class="box">
+
+                    <h3>Vous ne vous êtes inscrit à aucun séminaire.</h3>
+
+                </div>
+                <?php
+            }
+
+            }
+        ?>
 
 
     </div>

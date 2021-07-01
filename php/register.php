@@ -15,12 +15,8 @@ if(isset($_POST['nom'], $_POST['prenom'], $_POST['tel'], $_POST['mail'], $_POST[
     $mail = htmlspecialchars($_POST['mail']);
     $mdp = sha1($_POST['mdp']);
     $mdp2 = sha1($_POST['mdp2']);
-
     $prenomlength = strlen($prenom); // compte le nombre de lettre dans la variable prenom et renvoie un nombre
 
-   // if(isset($_POST['no']) and !empty($_POST['no'])) {
-
-    //}
     if(isset($_POST['yes']) and !empty($_POST['yes'])){
         if ($prenomlength <= 250) {
 
@@ -36,31 +32,28 @@ if(isset($_POST['nom'], $_POST['prenom'], $_POST['tel'], $_POST['mail'], $_POST[
 
                     if ($mdp == $mdp2) {
 
-                       /* session_start();
-                        $userinfo = $reqmail->fetch();
-                        $_SESSION['id_adherent'] = $userinfo['id_adherent'];
-                        $_SESSION['prenom_adherent'] = $userinfo['prenom'];*/
-
-
                         $insertUser = $bdd->prepare('INSERT INTO adherent (prenom, nom, telephone, mdp ,mail) VALUES (?,?,?,?,?)');
                         $insertUser->execute(array($prenom, $nom, $tel, $mdp, $mail));
 
                         header("Location:../login.php");
 
                     } else {
-                        echo "Vos mots de passes ne correspondent pas";
+                        $erreur = "Vos mots de passes ne correspondent pas";
+                        header("Location:../register.php?erreur=$erreur");
                     }
                 } else {
-                    echo "Mot de passe trop long";
+                    $erreur = "Mot de passe trop long";
+                    header("Location:../register.php?erreur=$erreur");
                 }
             } else {
-                echo "Mail déjà existant";
+                $erreur = "Mail déjà existant";
+                header("Location:../register.php?erreur=$erreur");
             }
         }
     }else{
         if ($prenomlength <= 250) {
 
-            $reqmail = $bdd->prepare('SELECT * FROM user WHERE mail = ?'); // SELECTIONNE TOUS LES MAIL dans la table user
+            $reqmail = $bdd->prepare('SELECT * FROM customer WHERE mail = ?'); // SELECTIONNE TOUS LES MAIL dans la table user
             $reqmail->execute(array($mail));
             $mailexist = $reqmail->rowCount(); // Va contenir le nombre de ligne où le mail rempli est présents
 
@@ -72,25 +65,29 @@ if(isset($_POST['nom'], $_POST['prenom'], $_POST['tel'], $_POST['mail'], $_POST[
 
                     if ($mdp == $mdp2) {
 
-                        $insertUser = $bdd->prepare('INSERT INTO user (prenom, nom, telephone, mail,password) VALUES (?,?,?,?,?)');
+                        $insertUser = $bdd->prepare('INSERT INTO customer (prenom, nom, telephone, mail,password) VALUES (?,?,?,?,?)');
                         $insertUser->execute(array($prenom, $nom, $tel, $mail, $mdp));
 
                         header("Location:../login.php");
 
                     } else {
-                        echo "Vos mots de passes ne correspondent pas";
+                        $erreur = "Vos mots de passes ne correspondent pas";
+                        header("Location:../register.php?erreur=$erreur");
                     }
                 } else {
-                    echo "Mot de passe trop long";
+                    $erreur = "Mot de passe trop long";
+                    header("Location:../register.php?erreur=$erreur");
                 }
             } else {
-                echo "Mail déjà existant";
+                $erreur = "Mail déjà existant";
+                header("Location:../register.php?erreur=$erreur");
             }
         }
     }
 
 }else{
-    echo "Veulliez remplir tous les champs";
+    $erreur = "Veulliez remplir tous les champs";
+
 }
 
 ?>

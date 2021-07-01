@@ -5,31 +5,34 @@
 
         <div class="box">
             <h3>À propos</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet pariatur rerum consectetur architecto ad tempora blanditiis quo aliquid inventore a.</p>
+            <p>
+                Réunis en association culturelle (loi 1901) depuis 2001, puis transformé en association cultuelle (loi 1905) en 2015, des musulmans de Choisy-le-Roi souhaitent construire un lieu de prière afin de pratiquer leur culte dans la dignité et pouvoir partager les valeurs et la culture de l’islam.</p>
         </div>
 
         <div class="box">
             <h3>Liens Rapide</h3>
-            <a href="#home">Accueil</a>
-            <a href="#about">Informations</a>
+            <a href="./">Accueil</a>
+            <a href="./#about">Informations</a>
         </div>
 
         <div class="box">
             <h3>Suivez Nous</h3>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Youtube</a>
+            <a href="https://www.mosquee-choisy.com">Notre Site web Officiel</a>
+            <a href="https://www.facebook.com/MosqueeChoisyLeRoi">Facebook</a>
+            <a href="https://www.instagram.com/mosquee_de_choisy_le_roi/">Instagram</a>
+            <a href="https://www.youtube.com/channel/UCsQhYcd01UEc4PevYIb-SLg">Youtube</a>
+            <a href="https://www.snapchat.com/add/mosquee-choisy">Snapchat</a>
         </div>
 
         <div class="box">
             <h3>contact</h3>
             <div class="info">
                 <i class="fas fa-phone"></i>
-                <p> +123-456-7890 <br> +111-2222-333 </p>
+                <p> 06-67-66-69-09</p>
             </div>
             <div class="info">
                 <i class="fas fa-envelope"></i>
-                <p> example@gmail.com <br> example@gmail.com </p>
+                <p> seminaire.amc@gmail.com </p>
             </div>
             <div class="info">
                 <i class="fas fa-map-marker-alt"></i>

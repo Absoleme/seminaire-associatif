@@ -6,43 +6,50 @@ if(isset($_POST['mdp'], $_POST['mail'], $_POST['update_form'])
     and !empty($_POST['mail'])
     and !empty($_POST['update_form'])){
 
-    $mdp = sha1($_POST['mdp']);
-    $mail = htmlspecialchars($_POST['mail']);
-
 
     if(isset($_POST['yes']) and !empty($_POST['yes'])){
-        echo "log1";
+
+        $mdpA = sha1($_POST['mdp']);
+        $mailA = htmlspecialchars($_POST['mail']);
+
         $reqMailAdherent = $bdd -> prepare("SELECT * FROM adherent WHERE mail=?");
-        echo "log2";
-        $reqMailAdherent -> execute(array($mail));
+        $reqMailAdherent -> execute(array($mailA));
 
         $mailAdherentExist = $reqMailAdherent -> rowCount();
-        echo "log3";
+
         if($mailAdherentExist == 1){
-            echo "log4";
+
             $reqUpdatePass = $bdd -> prepare("UPDATE adherent SET mdp = ? WHERE mail = ?");
-            $reqUpdatePass -> execute(array($mdp, $mail));
-            echo "log5";
+            $reqUpdatePass -> execute(array($mdpA, $mailA));
+
             header("Location:../login.php");
 
-        }else
-            echo "Cet email n'existe pas";
+        }else{
+            $msg = "Cet email n'existe pas";
+            header("Location:../passwordRecovery.php?erreur=$msg");}
     }else{
+        $mdpU = sha1($_POST['mdp']);
+        $mailU = htmlspecialchars($_POST['mail']);
 
-        $reqMailexistUser = $bdd -> prepare("SELECT * FROM user WHERE mail = ?");
-        $reqMailexistUser -> execute(array($mail));
+        $reqMailexistUser = $bdd -> prepare("SELECT * FROM customer WHERE mail = ?");
+        $reqMailexistUser -> execute(array($mailU));
 
-        $mailUserExist = $reqMailexistUser -> rowCount();
+        $mailUserExistU = $reqMailexistUser -> rowCount();
 
-        if($mailUserExist == 1){
-            $reqUpdatePass = $bdd -> prepare("UPDATE user SET password = ? WHERE mail = ?");
-            $reqUpdatePass -> execute(array($mdp, $mail));
+        if($mailUserExistU == 1){
+            $reqUpdatePassU = $bdd -> prepare("UPDATE customer SET password = ? WHERE mail = ?");
+            $reqUpdatePassU -> execute(array($mdpU, $mailU));
 
             header("Location:../login.php");
-        }else
-            echo "Cet email n'existe pas";
+
+        }else{
+            $msg = "Cet email n'existe pas";
+            header("Location:../passwordRecovery.php?erreur=$msg");
+        }
+
     }
 
 }else
-    echo "Veuillez remplir tous les champs";
+    $msg = "Veuillez remplir tous les champs";
+    header("../passwordRecovery.php?erreur=$msg");
 ?>
