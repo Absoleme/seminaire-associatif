@@ -19,3 +19,21 @@ The full folder structure of this app is explained below:
 | **css**                            | Contains the style                                                                                         |
 | **view**                           | Contains all the views of the project                                                                      |
 
+# Getting started
+
+- Clone the repository
+
+```
+git clone https://github.com/Absoleme/seminaire-associatif.git
+```
+
+- Execute scripts :
+
+    * To create tables
+    ```sh
+    data/script.sql
+    ```
+
+- Build and run the project
+
+
