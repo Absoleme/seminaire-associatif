@@ -100,6 +100,7 @@ include "./include/nav.php";
             <h3>Week-End 1 : Science du Tajwid</h3>
             <p>Du 10 au 11 Juillet de 9h à 19h30</p>
             <p>Commentaire en Français du poème al jazariya</p>
+            <p>Enseignant : Cheikh Zakaria</p>
             <?php
             if(!empty($_SESSION['id_adherent']))
             {
@@ -116,7 +117,9 @@ include "./include/nav.php";
                 <?php
             }
             ?>
+
             <a href="./php/addSeminartoBasket.php?id_we=1" class="btn">Ajouter au panier</a>
+
         </div>
 
         <div class="box">
@@ -124,6 +127,7 @@ include "./include/nav.php";
             <h3>Week-End 2 : Jurisprudence (Fiqh Malikite)</h3>
             <p>Du 24 au 25 Juillet de 9h à 19h30</p>
             <p>Commentaire en Français du livre Achmawiya</p>
+            <p>Enseignants : Cheikh Zakaria et Cheikh Ulas</p>
             <?php
             if(!empty($_SESSION['id_adherent']))
             {
@@ -140,7 +144,10 @@ include "./include/nav.php";
                 <?php
             }
             ?>
-            <a href="./php/addSeminartoBasket.php?id_we=2" class="btn">Ajouter au panier</a>
+
+                <a href="./php/addSeminartoBasket.php?id_we=2" class="btn">Ajouter au panier</a>
+
+
         </div>
 
         <div class="box">
@@ -148,6 +155,7 @@ include "./include/nav.php";
             <h3>Week-End 3 : Aqida</h3>
             <p>Du 14 au 15 Août de 9h à 19h30</p><br><br>
             <p>Commentaire en Français du livre Nour al Moubial</p>
+            <p>Enseignants : Cheikh Zakaria et Cheikh Ulas</p>
             <?php
             if(!empty($_SESSION['id_adherent']))
             {
@@ -164,13 +172,17 @@ include "./include/nav.php";
                 <?php
             }
             ?>
-            <a href="./php/addSeminartoBasket.php?id_we=3" class="btn">Ajouter au panier</a>
+
+                <a href="./php/addSeminartoBasket.php?id_we=3" class="btn">Ajouter au panier</a>
+
+
         </div>
         <div class="box">
             <img src="./images/seminaire-4.png" alt="">
             <h3>Week-End 4 : Spiritualité</h3>
             <p>Du 28 au 29 Août de 9h à 19h30</p>
             <p>Commentaire en Français du livre risalatou al moustarchidine</p>
+            <p>Enseignants : Cheikh Zakaria et Cheikh Ulas</p>
             <?php
             if(!empty($_SESSION['id_adherent']))
             {
@@ -187,7 +199,9 @@ include "./include/nav.php";
                 <?php
             }
             ?>
-            <a href="./php/addSeminartoBasket.php?id_we=4" class="btn">Ajouter au panier</a>
+           <a href="./php/addSeminartoBasket.php?id_we=4" class="btn">Ajouter au panier</a>
+
+
         </div>
 
     </div>

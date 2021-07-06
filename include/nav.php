@@ -2,7 +2,7 @@
 
 <header>
 
-    <a href="./" class="logo"><span>ACMC</span> Mosquée Choisy le roi</a>
+    <a href="./" class="logo"><span>AMC</span> Mosquée Choisy le roi</a>
 
     <input type="checkbox" id="menu-bar">
     <label for="menu-bar" class="fas fa-bars"></label>
@@ -10,6 +10,13 @@
     <nav class="navbar">
         <a href="./index.php">Accueil</a>
         <a href="./index.php#Séminaire">Séminaires</a>
+        <?php
+            if(empty($_SESSION['id_user']) and empty($_SESSION['id_adherent'])){
+        ?>
+        <a href="./login.php">Inscription/Connexion</a>
+        <?php
+            }
+        ?>
         <?php
 
         if(!empty($_SESSION['id_adherent'])){
