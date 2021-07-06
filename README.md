@@ -2,6 +2,10 @@
 
 This project is developed for an association that wishes to put online its registrations for their summer seminar.
 
+## Demo
+Follow this link :
+https://seminaires-amc.herokuapp.com
+
 ## Project Structure
 
 The full folder structure of this app is explained below:
